@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/configurationFragment">
+
+    <fragment
+        android:id="@+id/configurationFragment"
+        android:name="com.example.boardgamecollector.ConfigurationFragment"
+        android:label="fragment_configuration"
+        tools:layout="@layout/fragment_configuration" >
+        <action
+            android:id="@+id/action_configurationFragment_to_synchronizingFragment"
+            app:destination="@id/synchronizingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/synchronizingFragment"
+        android:name="com.example.boardgamecollector.SynchronizingFragment"
+        android:label="fragment_synchronizing"
+        tools:layout="@layout/fragment_synchronizing" >
+        <action
+            android:id="@+id/action_synchronizingFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.boardgamecollector.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_synchronizingFragment"
+            app:destination="@id/synchronizingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gamesFragment"
+            app:destination="@id/gamesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addOnFragment"
+            app:destination="@id/addOnFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gamesFragment"
+        android:name="com.example.boardgamecollector.GamesFragment"
+        android:label="fragment_games"
+        tools:layout="@layout/fragment_games" >
+        <action
+            android:id="@+id/action_gamesFragment_to_gameHistoryFragment"
+            app:destination="@id/gameHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addOnFragment"
+        android:name="com.example.boardgamecollector.AddOnFragment"
+        android:label="fragment_add_on"
+        tools:layout="@layout/fragment_add_on" />
+    <fragment
+        android:id="@+id/gameHistoryFragment"
+        android:name="com.example.boardgamecollector.GameHistoryFragment"
+        android:label="fragment_game_history"
+        tools:layout="@layout/fragment_game_history" />
+</navigation>
